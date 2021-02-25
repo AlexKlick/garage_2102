@@ -1,5 +1,5 @@
 
-class Car
+class Car 
   attr_reader :make, :model, :color, :year, :age
   def initialize(data)
     description = data[:description].split(' ')
