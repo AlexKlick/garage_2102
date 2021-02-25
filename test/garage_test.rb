@@ -42,4 +42,15 @@ class GarageTest < Minitest::Test
   def test_oldest_cars
     @garage.oldest_cars
   end
+
+  def test_oldest_car_owner
+    @garage.add_customer(@owner_1)
+    @garage.add_customer(@owner_2)
+    @garage.owner_of_oldest_car
+  end
+  def test_cars_in_range
+    @garage.add_customer(@owner_1)
+    @garage.add_customer(@owner_2)
+    @garage.cars_in_range(1967..2020)
+  end
 end

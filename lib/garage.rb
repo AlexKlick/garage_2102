@@ -21,7 +21,19 @@ class Garage
     hash
   end
   def oldest_cars
-    all_cars = self.all_cars
+    if @cars = []
+      all_cars
+    end
     all_cars.sort_by{|car| car.age }[-3..-1]
   end
+
+  def owner_of_oldest_car
+    @customers.find {|customer| customer.cars.include?(oldest_cars[-1])}
+  end
+
+  def cars_in_range(range)
+    if @cars = []
+      all_cars.find_all {|car| (range).include?(car.year.to_i)}
+    end
+  end    
 end
