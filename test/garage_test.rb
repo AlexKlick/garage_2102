@@ -16,25 +16,30 @@ class GarageTest < Minitest::Test
   end
   def test_instance_vars
     assert_equal @garage.name, "Totally Safe Parking"
+  end
+
+  def test_add_customer
     @garage.add_customer(@owner_1)
     @garage.add_customer(@owner_2)
 
     assert_equal @garage.customers, [@owner_1, @owner_2]
   end
 
-  def test_add_customer
-    
-  end
-
   def test_all_cars
-    
+    @garage.add_customer(@owner_1)
+    @garage.add_customer(@owner_2)
+    #assert_equal @garage.all_cars,
+    require 'pry'; binding.pry
   end
 
   def test_cars_by_make
-    
+    @garage.add_customer(@owner_1)
+    @garage.add_customer(@owner_2)
+    #assert_equal @garage.cars_by_make, {"Ford"=>[car1]}
+
   end
 
   def test_oldest_cars
-    
+    @garage.oldest_cars
   end
 end
