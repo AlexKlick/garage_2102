@@ -5,6 +5,7 @@ class Owner
     @name = name
     @occupation = occupation
     @cars = []
+    @vintage_cars = []
   end
 
   def buy(car_description)
@@ -15,5 +16,9 @@ class Owner
     #require 'pry'; binding.pry
     car_to_add = Car.new(hash)
     cars << car_to_add
+  end
+
+  def vintage_cars
+    @cars.find_all{|car| car.age > 25}
   end
 end
